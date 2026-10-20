@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAB Group</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- CSS Variables for easy color changes -->
+    <style>
+        :root {
+            /* Extracted from the SAB Group Logo */
+            --sab-primary: #0e2b42; /* Dark Navy Blue */
+            --sab-primary-hover: #164061; /* Slightly lighter navy for hover states */
+            --sab-secondary: #f4f3ef; /* Off-White / Cream */
+            --sab-text-main: #1f2937; /* Dark Gray for readability */
+            --sab-text-light: #ffffff; /* White text */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--sab-secondary);
+            color: var(--sab-text-main);
+        }
+    </style>
+
+    <!-- Tailwind Configuration using CSS Variables -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: 'var(--sab-primary)',
+                        primaryHover: 'var(--sab-primary-hover)',
+                        secondary: 'var(--sab-secondary)',
+                        textMain: 'var(--sab-text-main)',
+                        textLight: 'var(--sab-text-light)'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased flex flex-col min-h-screen bg-white">
+
+    <!-- Navigation Bar -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <!-- Using the referenced logo image -->
+                <img src="./asset/SAB-Group-Logo.jpeg" alt="SAB Group Logo" class="h-12 w-12 object-contain rounded" onerror="this.src='https://placehold.co/100x100/0e2b42/f4f3ef?text=SAB'">
+                <span class="font-bold text-2xl tracking-wide text-primary">SAB GROUP</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#hero" class="text-primary font-semibold hover:text-primaryHover transition">Home</a>
+                <a href="#about" class="text-primary font-semibold hover:text-primaryHover transition">About Us</a>
+                <a href="#companies" class="text-primary font-semibold hover:text-primaryHover transition">Our Companies</a>
+                <a href="#contact" class="text-primary font-semibold hover:text-primaryHover transition">Contact</a>
+            </nav>
+            <!-- Mobile Menu Button (Visual Only for simplicity) -->
+            <div class="md:hidden">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+
+        <!-- 1. Hero Section -->
+        <section id="hero" class="relative bg-secondary text-primary py-32 md:py-48 overflow-hidden">
+            <!-- Background overlay placeholder -->
+            <div class="absolute inset-0 z-0 opacity-30 bg-[url('https://placehold.co/1920x1080/f4f3ef/f4f3ef')] bg-cover bg-center"></div>
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
+                    Welcome to <span class="text-primaryHover">SAB Group</span>
+                </h1>
+                <p class="mt-4 max-w-2xl text-lg md:text-xl mx-auto mb-10 text-textMain">
+                    A premier holding company driving excellence, innovation, and sustainable growth across diverse industries.
+                </p>
+                <a href="#about" class="inline-block bg-primary text-white font-bold py-3 px-8 rounded shadow hover:bg-primaryHover transition-colors duration-300">
+                    Discover Our Vision
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. About Us Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">About SAB Group</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-8 rounded"></div>
+                <p class="text-lg leading-relaxed text-textMain mb-6">
+                    SAB Group operates as a distinguished mother company, serving as the strategic backbone for a robust portfolio of successful enterprises. Founded on the principles of integrity, foresight, and collaborative success, we empower our daughter companies to lead in their respective sectors.
+                </p>
+                <p class="text-lg leading-relaxed text-textMain">
+                    By centralizing core resources and fostering a culture of continuous improvement, SAB Group ensures that every entity under our umbrella achieves operational excellence while contributing to a shared vision of global impact.
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. Daughter Companies Section -->
+        <section id="companies" class="py-20 bg-secondary">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Enterprises</h2>
+                    <p class="text-textMain max-w-2xl mx-auto">Discover the specialized companies that drive our success.</p>
+                </div>
+
+                <div class="space-y-16">
+                    <!-- Company Card 1 (Odd: Image Left, Text Right) -->
+                    <div class="flex flex-col md:flex-row items-center gap-8 bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
+                        <div class="w-full md:w-1/3 flex items-center justify-center h-64 p-8 bg-white md:h-auto">
+                            <img src="./asset/basic-crave-logo.jpeg" alt="Company 1 Logo" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-full md:w-2/3 p-8 md:p-12">
+                            <h3 class="text-2xl font-bold text-primary mb-4">BASIC CRAVE PVT LTD</h3>
+                            <p class="text-textMain leading-relaxed mb-6">
+                                From development to delivery, we manage every stage of garment sourcing with quality-focused production, transparent communication, and trusted manufacturing networks.
+                            </p>
+                            <a href="https://www.basiccrave.com" target="_blank" class="text-primary font-semibold hover:underline">Learn more &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Company Card 2 (Even: Text Left, Image Right -> md:flex-row-reverse) -->
+                    <div class="flex flex-col md:flex-row-reverse items-center gap-8 bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
+                        <div class="w-full md:w-1/3 flex items-center justify-center h-64 p-8 bg-white md:h-auto">
+                            <img src="./asset/SUA-Logo-2.jpeg" alt="Company 2 Logo" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-full md:w-2/3 p-8 md:p-12">
+                            <h3 class="text-2xl font-bold text-primary mb-4">SUA MULTI FARM</h3>
+                            <p class="text-textMain leading-relaxed mb-6">
+                                SUA MULTI FARM is an agro-based company specializing in agricultural production, sourcing, and supplying quality food products to meet the diverse needs of customers and businesses.
+                            </p>
+                            <a class="text-primary font-semibold hover:underline">Learn more &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Company Card 3 (Odd: Image Left, Text Right) -->
+                    <div class="flex flex-col md:flex-row items-center gap-8 bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
+                        <div class="w-full md:w-1/3 flex items-center justify-center h-64 p-8 bg-white md:h-auto">
+                            <img src="https://placehold.co/400x300/?text=No+Image+Input+Yet" alt="Company 3 Logo" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-full md:w-2/3 p-8 md:p-12">
+                            <h3 class="text-2xl font-bold text-primary mb-4">GARIR ADDA</h3>
+                            <p class="text-textMain leading-relaxed mb-6">
+                                Coming Soon...
+                            </p>
+                            <a class="text-primary font-semibold hover:underline">Learn more &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Company Card 4 (Even: Text Left, Image Right -> md:flex-row-reverse) -->
+                    <div class="flex flex-col md:flex-row-reverse items-center gap-8 bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
+                        <div class="w-full md:w-1/3 flex items-center justify-center h-64 p-8 bg-white md:h-auto">
+                            <img src="https://placehold.co/400x300/?text=No+Image+Input+Yet" alt="Company 4 Logo" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-full md:w-2/3 p-8 md:p-12">
+                            <h3 class="text-2xl font-bold text-primary mb-4">101 CONSTRUCTION AND REALSTATE</h3>
+                            <p class="text-textMain leading-relaxed mb-6">
+                                Coming Soon...
+                            </p>
+                            <a class="text-primary font-semibold hover:underline">Learn more &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Contact Section -->
+        <section id="contact" class="py-20 bg-white text-textMain">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Contact Details -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-primary mb-6">Get In Touch</h2>
+                        <p class="text-textMain mb-8 max-w-md">
+                            Whether you are looking to partner with us or want to learn more about our portfolio of companies, we would love to hear from you.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <svg class="w-6 h-6 text-primary mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                <div>
+                                    <h4 class="font-bold text-primary">Headquarters</h4>
+                                    <p class="text-textMain">123 Corporate Blvd, Suite 500<br>Business District, City 10001</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <svg class="w-6 h-6 text-primary mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                <div>
+                                    <h4 class="font-bold text-primary">Email</h4>
+                                    <p class="text-textMain">contact@sabgroup.example.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="bg-secondary text-primary p-8 rounded-xl shadow-md border border-gray-200">
+                        <form onsubmit="event.preventDefault();">
+                            <div class="mb-4">
+                                <label for="name" class="block text-sm font-semibold mb-2">Full Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-white text-textMain" placeholder="John Doe">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-semibold mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-white text-textMain" placeholder="john@example.com">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-sm font-semibold mb-2">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-white text-textMain resize-none" placeholder="How can we help you?"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary text-white font-bold py-3 px-4 rounded hover:bg-primaryHover transition-colors duration-300">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0a1f30] text-gray-400 py-6 text-center border-t border-gray-700">
+        <p>&copy; 2026 SAB Group. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
